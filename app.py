@@ -3,6 +3,10 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
+def home_route():
+    return "home route"
+
+@app.route('/querystring', methods=['GET'])
 def parse_query_params():
     # Get all query parameters as a dictionary
     query_params = request.args.to_dict()
