@@ -20,5 +20,9 @@ def parse_query_params():
         "parameters": query_params
     })
 
+@app.route('/default', methods=["GET"])
+def default_params():
+    return app.send_static_file('index.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
